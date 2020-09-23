@@ -1,0 +1,130 @@
+#types {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.type {
+   border-radius: 3px;
+   padding: 7px;
+   height: 40px;
+   width: 140px;
+   margin:5px;
+   transition: 200ms all;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/* .type:hover{
+   filter: saturate(200%);
+   transform: scale(1.1);
+   cursor: pointer;
+} */
+
+.type img {
+   margin: 0;
+   width: 20px;
+}
+
+.type p {
+   display: inline-block;
+   margin-right: 16px;
+   color: white;
+   text-align: center;
+}
+
+.type-icon {
+   width: auto;
+}
+
+.bug {
+   background: #92BC2C;
+   box-shadow: 0 0 20px rgba(146, 188, 44, 0.5);
+}
+
+.dark {
+   background: #595761;
+   box-shadow: 0 0 20px rgba(89, 87, 97, 0.5);
+}
+
+.dragon {
+   background: #0C69C8;
+   box-shadow: 0 0 20px rgba(12, 105, 200, 0.5);
+}
+
+.electric {
+   background: #F2D94E;
+   box-shadow: 0 0 20px rgba(242, 217, 78, 0.5);
+}
+
+.fire {
+   background: #FBA54C;
+   box-shadow: 0 0 20px rgba(251, 165, 76, 0.5);
+}
+
+.fairy {
+   background: #EE90E6;
+   box-shadow: 0 0 20px rgba(238, 144, 230, 0.5);
+}
+
+.fighting {
+   background: #D3425F;
+   box-shadow: 0 0 20px rgba(211, 66, 95, 0.5);
+}
+
+.flying {
+   background: #A1BBEC;
+   box-shadow: 0 0 20px rgba(161, 187, 236, 0.5);
+}
+
+.ghost {
+   background: #5F6DBC;
+   box-shadow: 0 0 20px rgba(95, 109, 188, 0.5);
+}
+
+.grass {
+   background: #5FBD58;
+   box-shadow: 0 0 20px rgba(95, 189, 88, 0.5);
+}
+
+.ground {
+   background: #DA7C4D;
+   box-shadow: 0 0 20px rgba(218, 124, 77, 0.5);
+}
+
+.ice {
+   background: #75D0C1;
+   box-shadow: 0 0 20px rgba(117, 208, 193, 0.5);
+}
+
+.normal {
+   background: #A0A29F;
+   box-shadow: 0 0 20px rgba(160, 162, 159, 0.5);
+}
+
+.poison {
+   background: #B763CF;
+   box-shadow: 0 0 20px rgba(183, 99, 207, 0.5);
+}
+
+.psychic {
+   background: #FA8581;
+   box-shadow: 0 0 20px rgba(250, 133, 129, 0.5);
+}
+
+.rock {
+   background: #C9BB8A;
+   box-shadow: 0 0 20px rgba(201, 187, 138, 0.5);
+}
+
+.steel {
+   background: #5695A3;
+   box-shadow: 0 0 20px rgba(86, 149, 163, 0.5);
+}
+
+.water {
+   background: #539DDF;
+   box-shadow: 0 0 20px rgba(83, 157, 223, 0.5);
+}

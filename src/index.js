@@ -1,11 +1,10 @@
-import $ from 'jquery';
+import $ from "jquery";
+import "./components/PokemonCard.js";
 import "./style/style.css";
 
-async function callPokemon(name) {
-   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-   const data = await res.json()
-   console.log(data)
-}
+const name = () => $('#search-input').val().toLowerCase()
 
-// $('#search-button').submit(() => callPokemon('mudkip'))
-$('#click').on('click', () => callPokemon('mudkip'))
+$("#search-form").on("submit", event => {
+   event.preventDefault();
+   $('pokemon-card').attr('name', name);
+});

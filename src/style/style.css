@@ -1,3 +1,123 @@
+@import "pokemon-card.css";
+
+* {
+	--green: #7dce94;
+	--black: #3d3d3f;
+	--cream: #f6f5f3;
+	--white: #f9f8fd;
+
+	box-sizing: border-box;
+}
+
 body {
-   margin: 0;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+	background: url("../img/background.jpg") center;
+}
+
+pokemon-card {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	padding: 20px 25px;
+	background-color: rgba(255, 255, 255, 0.65);
+	backdrop-filter: blur(12px);
+	box-shadow: 0px 4px 32px rgba(182, 182, 182, 0.671);
+	color: var(--black);
+	width: 75vw;
+	max-width: 390px;
+	border-radius: 7px;
+}
+
+#search-form {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	width: 75vw;
+	max-width: 390px;
+	border-radius: 7px;
+	background-color: rgba(255, 255, 255, 0.65);
+	backdrop-filter: blur(12px);
+	box-shadow: 0px 4px 32px rgba(182, 182, 182, 0.671);
+	color: var(--black);
+	margin-bottom: 70px;
+	padding-left: 12px;
+	position: relative;
+}
+
+#search-input {
+	background: none;
+	border: none;
+	flex: 1 0 86%;
+	font-size: 18px;
+}
+
+#search-input:focus {
+	outline: 0;
+}
+
+#search-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	width: 60px;
+	height: 60px;
+	background: transparent;
+	border: none;
+	border-radius: 100%;
+	flex: 0 0 auto;
+	transition: ease-in-out 150ms all;
+}
+
+#search-button:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+	/* border: 1px solid rgba(128, 128, 128, 0.3); */
+}
+
+#search-button:focus {
+	outline: 0;
+}
+
+#search-button:focus::after {
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	content: "";
+	background: transparent;
+	border-radius: 100%;
+	z-index: -1;
+	animation: click-wave 1s;
+}
+
+@keyframes click-wave {
+	0% {
+		width: 10px;
+		height: 10px;
+		opacity: 0.8;
+		background: #7dce94;
+	}
+	100% {
+		width: 100px;
+		height: 100px;
+		opacity: 0;
+	}
+}
+
+.gradient {
+	color: inherit;
+	background-image: radial-gradient(
+		circle at 50% 50%,
+		hsla(0, 0%, 68.2%, 0.35) 46%,
+		hsla(0, 0%, 40%, 0.75) 83%
+	);
 }
