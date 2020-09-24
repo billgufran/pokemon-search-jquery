@@ -7,7 +7,7 @@
 			href="https://fonts.googleapis.com/css2?family=Material+Icons"
 			rel="stylesheet"
 		/>
-		<title>Pokedex</title>
+		<title>Pokemon Search</title>
 	</head>
 	<body>
 		<header>
@@ -29,5 +29,35 @@
 				<pokemon-card name="bulbasaur"></pokemon-card>
 			</div>
 		</main>
+		<footer>
+			<div>
+				<p>
+					Created by
+					<a href="http://github.com/billgufran" target="_blank"
+						>Billgufran</a
+					>
+				</p>
+				<p>
+					Pokémon &copy; 2002-2020 Pokémon. &copy; 1995-2020
+					Nintendo/Creatures Inc./GAME FREAK inc. TM, &reg; and Pokémon
+					character names are trademarks of Nintendo.
+				</p>
+				<p>
+					SVG icons by
+					<a
+						href="https://github.com/duiker101/pokemon-type-svg-icons"
+						target="_blank"
+						>duiker101</a
+					>, data fetched from
+					<a href="https://pokeapi.co/" target="_blank">Pokeapi</a>
+				</p>
+			</div>
+		</footer>
 	</body>
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+	<script>
+		$(function ($) {
+			$(".card").flip();
+		});
+	</script>
 </html>

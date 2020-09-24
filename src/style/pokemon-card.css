@@ -1,3 +1,10 @@
+pokemon-card {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+}
+
 #types {
    width: 100%;
    display: flex;
@@ -16,12 +23,6 @@
    align-items: center;
    justify-content: center;
 }
-
-/* .type:hover{
-   filter: saturate(200%);
-   transform: scale(1.1);
-   cursor: pointer;
-} */
 
 .type img {
    margin: 0;
