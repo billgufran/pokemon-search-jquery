@@ -38,8 +38,6 @@ class PokemonCard extends HTMLElement {
 			this.data = res.data;
 
 			$(this).html(`
-			<div id="flip">
-				<div class="front">
 					<h3>#${this.padZero(this.data.id)}</h3>
 					<img src='https://pokeres.bastionbot.org/images/pokemon/${this.data.id}.png'
 					width='200px'>
@@ -56,23 +54,6 @@ class PokemonCard extends HTMLElement {
 							})
 							.join("")}
 					</div>
-				</div>
-
-				<div class="back">
-					<h3>Stats</h3>
-					<div id="stats">
-						${this.data.stats
-							.map(stat => {
-								return `
-								<div id="${stat.stat.name} " class="stat">
-										<p>${stat.stat.name.toUpperCase()} &horbar; <b>${stat.base_stat}</b></p>
-								</div>
-							`;
-							})
-							.join("")}
-					</div>
-				</div>
-			</div>
 				`);
 		} catch (error) {
 			alert("Not today kid");

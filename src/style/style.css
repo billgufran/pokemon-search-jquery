@@ -10,6 +10,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -17,9 +21,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	margin: 0;
-	height: 100vh;
+	padding-top: 65px;
+	padding-bottom: 15px;
+	height: 100%;
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: column wrap;
 	align-items: center;
 	justify-content: space-around;
 	background-color: #79caf9;
@@ -27,20 +33,20 @@ body {
 }
 
 header {
-	flex: 1 0 5%;
+	flex: 0 0 auto;
 	display: flex;
 	align-items: flex-end;
 }
 
 main {
-	flex: 1 0 81%;
+	flex: 1 0 auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 footer {
-	flex: 1 0 5%;
+	flex: 0 0 auto;
 	color: var(--black);
 	font-size: 9.5px;
 	text-align: center;
@@ -71,14 +77,50 @@ footer a {
 	box-shadow: 0px 4px 32px rgba(61, 61, 63, 0.45);
 }
 
-@media screen and (min-height: 1080px) {
+@media screen and (max-height: 600px) {
+	html {
+		height: auto;
+	}
+
+	body {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	main {
+		margin-top: 20px;
+		margin-bottom: 20px;
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 850px) and (orientation: landscape) {
+	body {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		flex-flow: row wrap;
+	}
+
+	main {
+		margin-top: 20px;
+		margin-bottom: 20px;
+  }
+}
+
+/* @media screen and (orientation: landscape) {
+	html {
+	  height: auto;
+	}
+ } */
+
+/* @media screen and (min-height: 1080px) {
 	body {
 		background: url("../img/background.jpg") bottom repeat-x;
 		background-color: #79caf9;
 	}
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 750px) {
 	body {
 		height: 100%;
 	}
@@ -91,4 +133,4 @@ footer a {
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
-}
+} */
