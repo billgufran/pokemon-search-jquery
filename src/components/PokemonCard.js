@@ -38,21 +38,40 @@ class PokemonCard extends HTMLElement {
 			this.data = res.data;
 
 			$(this).html(`
-					<h3>#${this.padZero(this.data.id)}</h3>
-					<img src='https://pokeres.bastionbot.org/images/pokemon/${this.data.id}.png'
-					width='200px'>
-					<h1>${this.toProperCase(this.data.name)}</h1>
-					<div id='types'>
-						${this.data.types
-							.map(type => {
-								return `
-								<div class="${type.type.name} type">
-										<p>${type.type.name.toUpperCase()}</p>
-										<img src='./img/${type.type.name}.svg' alt="type's symbol">
-								</div>
-							`;
-							})
-							.join("")}
+					<div class="front flex-center">
+						<div>
+							<h3>#${this.padZero(this.data.id)}</h3>
+						</div>
+						<img src='https://pokeres.bastionbot.org/images/pokemon/${this.data.id}.png'
+						width='200px'>
+						<h1>${this.toProperCase(this.data.name)}</h1>
+						<div id='types'>
+							${this.data.types
+								.map(type => {
+									return `
+									<div class="${type.type.name} type">
+											<p>${type.type.name.toUpperCase()}</p>
+											<img src='./img/${type.type.name}.svg' alt="type's symbol">
+									</div>
+								`;
+								})
+								.join("")}
+						</div>
+					</div>
+
+					<div class="back flex-center">
+						<h2>Stats</h2>
+						<div id="stats">
+							${this.data.stats
+								.map(stat => {
+									return `
+									<div id="${stat.stat.name} " class="stat">
+											<p>${stat.stat.name.toUpperCase()} &horbar; <b>${stat.base_stat}</b></p>
+									</div>
+								`;
+								})
+								.join("")}
+						</div>
 					</div>
 				`);
 		} catch (error) {

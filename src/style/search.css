@@ -27,6 +27,7 @@
 	border: none;
 	color: var(--black);
 	font-size: 18px;
+	width: 100%;
 }
 
 #search-input:focus {
