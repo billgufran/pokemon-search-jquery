@@ -1,0 +1,32 @@
+#error {
+	position: relative;
+}
+
+#error::after {
+	color: lightsteelblue;
+	font-size: 115px;
+	font-weight: bolder;
+	content: "4";
+	position: absolute;
+	background: transparent;
+	top: 6px;
+	right: -20px;
+	z-index: -1;
+}
+
+#error::before {
+	color: lightsteelblue;
+	font-size: 115px;
+	font-weight: bolder;
+	content: "4";
+	position: absolute;
+	background: transparent;
+	top: 6px;
+	left: -22px;
+	z-index: -1;
+}
+
+#not-found {
+   width: 177px;
+   filter: opacity(85%);
+}

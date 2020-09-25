@@ -1,6 +1,7 @@
 @import "pokemon-card.css";
 @import "search.css";
 @import "card.css";
+@import "fourohfour.css";
 
 * {
 	--green: #7dce94;
@@ -29,8 +30,8 @@ body {
 	flex-flow: column wrap;
 	align-items: center;
 	justify-content: space-around;
-	background-color: #79caf9;
 	background: url("../img/background.jpg") center repeat-x;
+	background-color: #79caf9;
 }
 
 header {
@@ -81,9 +82,8 @@ footer a {
 	main {
 		margin-top: 20px;
 		margin-bottom: 20px;
-  }
+	}
 }
-
 
 @media screen and (min-width: 320px) and (max-width: 850px) and (orientation: landscape) {
 	body {
@@ -95,33 +95,12 @@ footer a {
 	main {
 		margin-top: 20px;
 		margin-bottom: 20px;
-  }
+	}
 }
 
-/* @media screen and (orientation: landscape) {
-	html {
-	  height: auto;
-	}
- } */
-
-/* @media screen and (min-height: 1080px) {
+@media screen and (min-height: 1200px) {
 	body {
 		background: url("../img/background.jpg") bottom repeat-x;
 		background-color: #79caf9;
 	}
 }
-
-@media screen and (max-height: 750px) {
-	body {
-		height: 100%;
-	}
-
-	header {
-		margin-top: 25px;
-	}
-
-	main {
-		margin-top: 30px;
-		margin-bottom: 30px;
-	}
-} */

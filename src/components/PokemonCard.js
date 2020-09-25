@@ -1,5 +1,6 @@
 import axios from "axios";
 import $ from "jquery";
+import pokeball from "../img/pokeball-404.png";
 
 class PokemonCard extends HTMLElement {
 	static get observedAttributes() {
@@ -36,6 +37,7 @@ class PokemonCard extends HTMLElement {
 			);
 
 			this.data = res.data;
+			$('pokemon-card').addClass('card-flip').removeClass('card')
 
 			$(this).html(`
 					<div class="front flex-center">
@@ -75,8 +77,17 @@ class PokemonCard extends HTMLElement {
 					</div>
 				`);
 		} catch (error) {
-			alert("Not today kid");
+			// alert("Not today kid");
 			console.log(error.response);
+
+			$('pokemon-card').addClass('card').removeClass('card-flip')
+
+			$(this).html(`
+				<div id="error" class="flex-center">
+					<img id="not-found" src="${pokeball}" alt="pokemon not found">
+					<p>Pokémon not found</p>
+				</div>
+			`)
 		}
 	}
 
