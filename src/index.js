@@ -6,15 +6,15 @@ $(function() {
    setTimeout(function() {
       $(".card-flip").addClass("flipped");
       $('.back').addClass('blink')
-   }, 4000)
+   }, 2500)
    setTimeout(function() {
       $('.front').addClass('blink')
       $(".card-flip").removeClass("flipped")
-   }, 4800)
+   }, 3300)
    setTimeout(function() {
       $('.front').removeClass('blink')
       $('.back').removeClass('blink')
-   }, 6000)
+   }, 4500)
 })
 
 const name = () => $("#search-input").val().toLowerCase();
