@@ -62,6 +62,19 @@ footer a {
 	color: var(--black);
 }
 
+.blink {
+	animation: blinking 0.3s alternate 4;
+}
+
+@keyframes blinking {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.7;
+	}
+}
+
 .flex-center {
 	display: flex;
 	flex-flow: column wrap;
@@ -104,7 +117,6 @@ footer a {
 		background-color: #79caf9;
 	}
 }
-
 
 @media screen and (min-width: 2500px) {
 	#header-content {
