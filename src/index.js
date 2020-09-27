@@ -7,7 +7,7 @@ const name = () => $('#search-input').val().toLowerCase()
 $("#search-form").on("submit", event => {
    event.preventDefault();
    $('pokemon-card').attr('name', name);
-   $('.card').removeClass('flipped');
+   $('.card-flip').removeClass('flipped');
 });
 
 $('.card-flip').on("click", function(){

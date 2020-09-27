@@ -42,12 +42,11 @@ class PokemonCard extends HTMLElement {
 		return firstChar + string.substring(1);
 	}
 
-	async callPokemon() {
-		this.name = $(this).attr("name");
+	async callPokemon(query) {
 
 		try {
 			const res = await axios.get(
-				`https://pokeapi.co/api/v2/pokemon/${this.name}`
+				`https://pokeapi.co/api/v2/pokemon/${query}`
 			);
 
 			this.data = res.data;
@@ -107,11 +106,13 @@ class PokemonCard extends HTMLElement {
 	}
 
 	connectedCallback() {
-		this.callPokemon();
+		const randomId = Math.floor((Math.random() * 893) + 1);
+		this.callPokemon(randomId);
 	}
 
 	attributeChangedCallback() {
-		this.callPokemon();
+		let name = $(this).attr("name");
+		this.callPokemon(name);
 	}
 }
 
