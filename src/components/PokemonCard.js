@@ -2,6 +2,20 @@ import axios from "axios";
 import $ from "jquery";
 import pokeball from "../img/pokeball-404.png";
 
+function importAll(r) {
+	let icons = {};
+	r.keys().map((item, index) => {
+		icons[item.replace("./", "")] = r(item);
+	});
+	return icons;
+}
+
+const icons = importAll(
+	require.context("../img/icons", false, /\.svg$/)
+);
+
+console.log(icons)
+
 class PokemonCard extends HTMLElement {
 	static get observedAttributes() {
 		return ["name"];
@@ -50,10 +64,11 @@ class PokemonCard extends HTMLElement {
 						<div id='types'>
 							${this.data.types
 								.map(type => {
+									const icon = icons[`${type.type.name}.svg`]
 									return `
 									<div class="${type.type.name} type">
 											<p>${type.type.name.toUpperCase()}</p>
-											<img src='./img/${type.type.name}.svg' alt="type's symbol">
+											<img src=${icon.default} alt="type's symbol">
 									</div>
 								`;
 								})
