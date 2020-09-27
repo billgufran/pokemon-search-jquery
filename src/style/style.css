@@ -104,3 +104,16 @@ footer a {
 		background-color: #79caf9;
 	}
 }
+
+
+@media screen and (min-width: 2500px) {
+	#header-content {
+		transform: scale(1.5);
+	}
+	#main-content {
+		transform: scale(1.5);
+	}
+	#footer-content {
+		transform: scale(1.5);
+	}
+}

@@ -11,46 +11,55 @@
 	</head>
 	<body>
 		<header>
-			<div id="search-bar">
-				<form id="search-form">
-					<input
-						id="search-input"
-						type="search"
-						placeholder="Search Pokemon..."
-					/>
-					<button id="search-button" type="submit">
-						<i class="material-icons md-24">search</i>
-					</button>
-				</form>
+			<div id="header-content">
+				<div id="search-bar">
+					<form id="search-form">
+						<input
+							id="search-input"
+							type="search"
+							placeholder="Search Pokemon..."
+						/>
+						<button id="search-button" type="submit">
+							<i class="material-icons md-24">search</i>
+						</button>
+					</form>
+				</div>
 			</div>
 		</header>
 		<main>
-			<div class="flipper">
-				<pokemon-card name="bulbasaur" class="card-flip flex-center"></pokemon-card>
+			<div id="main-content">
+				<div class="flipper">
+					<pokemon-card
+						name="bulbasaur"
+						class="card-flip flex-center"
+					></pokemon-card>
+				</div>
 			</div>
 		</main>
 		<footer>
-			<div>
-				<p>
-					Created by
-					<a href="http://github.com/billgufran" target="_blank"
-						>Billgufran</a
-					>
-				</p>
-				<p>
-					Pokémon &copy; 2002-2020 Pokémon. &copy; 1995-2020
-					Nintendo/Creatures Inc./GAME FREAK inc. TM, &reg; and Pokémon
-					character names are trademarks of Nintendo.
-				</p>
-				<p>
-					SVG icons by
-					<a
-						href="https://github.com/duiker101/pokemon-type-svg-icons"
-						target="_blank"
-						>duiker101</a
-					>, data fetched from
-					<a href="https://pokeapi.co/" target="_blank">Pokeapi</a>
-				</p>
+			<div id="footer-content">
+				<div>
+					<p>
+						Created by
+						<a href="http://github.com/billgufran" target="_blank"
+							>Billgufran</a
+						>
+					</p>
+					<p>
+						Pokémon &copy; 2002-2020 Pokémon. &copy; 1995-2020
+						Nintendo/Creatures Inc./GAME FREAK inc. TM, &reg; and Pokémon
+						character names are trademarks of Nintendo.
+					</p>
+					<p>
+						SVG icons by
+						<a
+							href="https://github.com/duiker101/pokemon-type-svg-icons"
+							target="_blank"
+							>duiker101</a
+						>, data fetched from
+						<a href="https://pokeapi.co/" target="_blank">Pokeapi</a>
+					</p>
+				</div>
 			</div>
 		</footer>
 	<script src="bundle.js"></script></body>
