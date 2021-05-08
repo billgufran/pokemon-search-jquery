@@ -1,24 +1,23 @@
-import axios from "axios";
-import $ from "jquery";
-import pokeball from "../img/pokeball-404.png";
+import axios from 'axios';
+import $ from 'jquery';
+import pokeball from '../img/pokeball-404.png';
 
 function importAll(r) {
 	let icons = {};
-	r.keys().map((item, index) => {
-		icons[item.replace("./", "")] = r(item);
+	r.keys().map((item) => {
+		icons[item.replace('./', '')] = r(item);
 	});
 	return icons;
 }
 
 const icons = importAll(
-	require.context("../img/icons", false, /\.svg$/)
+	// create list of icons path
+	require.context('../img/icons', false, /\.svg$/)
 );
-
-console.log(icons)
 
 class PokemonCard extends HTMLElement {
 	static get observedAttributes() {
-		return ["name"];
+		return ['name'];
 	}
 
 	constructor() {
@@ -33,7 +32,7 @@ class PokemonCard extends HTMLElement {
 		if (string.length === digits) {
 			return string;
 		} else if (string.length < digits) {
-			return string.padStart(digits, "0");
+			return string.padStart(digits, '0');
 		}
 	}
 
@@ -43,14 +42,13 @@ class PokemonCard extends HTMLElement {
 	}
 
 	async callPokemon(query) {
-
 		try {
 			const res = await axios.get(
 				`https://pokeapi.co/api/v2/pokemon/${query}`
 			);
 
 			this.data = res.data;
-			$('pokemon-card').addClass('card-flip').removeClass('card')
+			$('pokemon-card').addClass('card-flip').removeClass('card');
 
 			$(this).html(`
 					<div class="front flex-center">
@@ -62,16 +60,16 @@ class PokemonCard extends HTMLElement {
 						<h1>${this.toProperCase(this.data.name)}</h1>
 						<div id='types'>
 							${this.data.types
-								.map(type => {
-									const icon = icons[`${type.type.name}.svg`]
+								.map((type) => {
+									const icon = icons[`${type.type.name}.svg`];
 									return `
 									<div class="${type.type.name} type">
-											<p>${type.type.name.toUpperCase()}</p>
-											<img src=${icon.default} alt="type's symbol">
+										<p>${type.type.name.toUpperCase()}</p>
+										<img src=${icon.default} alt="type's symbol">
 									</div>
 								`;
 								})
-								.join("")}
+								.join('')}
 						</div>
 					</div>
 
@@ -79,41 +77,40 @@ class PokemonCard extends HTMLElement {
 						<h2>Stats</h2>
 						<div id="stats">
 							${this.data.stats
-								.map(stat => {
+								.map((stat) => {
 									return `
 									<div id="${stat.stat.name} " class="stat">
 											<p>${stat.stat.name.toUpperCase()} &horbar; <b>${stat.base_stat}</b></p>
 									</div>
 								`;
 								})
-								.join("")}
+								.join('')}
 						</div>
 					</div>
 				`);
 		} catch (error) {
-			// alert("Not today kid");
-			console.log(error.response);
+			console.error(error.response);
 
-			$('pokemon-card').addClass('card').removeClass('card-flip')
+			$('pokemon-card').addClass('card').removeClass('card-flip');
 
 			$(this).html(`
 				<div id="error" class="flex-center">
 					<img id="not-found" src="${pokeball}" alt="pokemon not found">
 					<p>Pokémon not found</p>
 				</div>
-			`)
+			`);
 		}
 	}
 
 	connectedCallback() {
-		const randomId = Math.floor((Math.random() * 893) + 1);
+		const randomId = Math.floor(Math.random() * 893 + 1);
 		this.callPokemon(randomId);
 	}
 
 	attributeChangedCallback() {
-		let name = $(this).attr("name");
+		let name = $(this).attr('name');
 		this.callPokemon(name);
 	}
 }
 
-customElements.define("pokemon-card", PokemonCard);
+customElements.define('pokemon-card', PokemonCard);
