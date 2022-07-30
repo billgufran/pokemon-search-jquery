@@ -10,10 +10,8 @@ function importAll(r) {
 	return icons;
 }
 
-const icons = importAll(
-	// create list of icons path
-	require.context('../img/icons', false, /\.svg$/)
-);
+// create list of icons path
+const icons = importAll(require.context('../img/icons', false, /\.svg$/));
 
 class PokemonCard extends HTMLElement {
 	static get observedAttributes() {
