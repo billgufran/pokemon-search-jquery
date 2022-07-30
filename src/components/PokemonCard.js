@@ -1,3 +1,10 @@
+/**
+ * @todo
+ * [ ] implement blurry image loading
+ *      - load low res sprite first
+ *      - then load official artwork
+ */
+
 import axios from 'axios';
 import $ from 'jquery';
 import pokeball from '../img/pokeball-404.png';
@@ -46,6 +53,7 @@ class PokemonCard extends HTMLElement {
 			);
 
 			this.data = res.data;
+
 			$('pokemon-card').addClass('card-flip').removeClass('card');
 
 			$(this).html(`
@@ -53,8 +61,11 @@ class PokemonCard extends HTMLElement {
 						<div>
 							<h3>#${this.padZero(this.data.id)}</h3>
 						</div>
-						<img src='https://pokeres.bastionbot.org/images/pokemon/${this.data.id}.png'
-						width='200px'>
+						<img
+              src=${this.data.sprites.other['official-artwork'].front_default}
+						  width='200px'
+              alt=${this.data.name}
+            >
 						<h1>${this.toProperCase(this.data.name)}</h1>
 						<div id='types'>
 							${this.data.types
